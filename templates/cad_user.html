@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+      input[type=submit] {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          text-decoration: none;
+          margin: 4px 2px;
+          cursor: pointer;
+      }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+  <h2 align="center">CADASTRO DE USUÁRIO</h2>
+  <form action="/auth/add" method="post">
+    <div class="form-group">
+      <label for="usuario">NOME DE USUÁRIO</label>
+      <input type="text" class="form-control" id="usuario" placeholder="Digite seu nome" name="usuario">
+    </div>
+    <div class="form-group">
+      <label for="senha">SENHA</label>
+      <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" name="senha">
+    </div>
+    <div class="form-group">
+      <label for="email">E-MAIL</label>
+      <input type="email" class="form-control" id="email" placeholder="Digite seu email" name="email">
+    </div>
+        <div class="form-group">
+      <label for="Cemail">CONFIRME SEU EMAIL</label>
+      <input type="email" class="form-control" id="Cemail" placeholder="Digite seu email" name="Cemail" oninput="check(this)">
+
+    <script>
+    function check(input) {
+      if (input.value != document.getElementById('email').value) {
+        input.setCustomValidity('O e-mail não confere');
+      } else {
+        // input is valid -- reset the error message
+        input.setCustomValidity('');
+      }
+    }
+    </script>
+    </div>
+
+      <div class="form-group">
+      <label for="nome">NOME COMPLETO</label>
+      <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" name="nome">
+    </div>
+    <div class="form-group">
+  <label for="escola">NOME DA INSTITUIÇÃO</label>
+  <input type="text" class="form-control" id="escola" placeholder="Digite o nome da escola" name="escola">
+    </div>
+    <div class="form-group" align="right">
+        <input type="submit" id="cancelar" style="background-color:#8B0000" class="btn btn-default" value="Cancelar" ></input>
+        <input type="submit" id="enviar" class="btn btn-default" value="Enviar" ></input>
+    </div>
+</form>
+</body>
+</html>
